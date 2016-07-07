@@ -116,7 +116,7 @@ app.put('/items/:id', jsonParser, function(req, res) {
 		// if item exists
 		if (item) {
 			// send back item
-			return res.status(201).json(item);
+			return res.status(200).json(item);
 		} else {
 			// else send 404
 			return res.sendStatus(404).json("Item not found.");
@@ -126,3 +126,8 @@ app.put('/items/:id', jsonParser, function(req, res) {
 
 // Listener
 app.listen(process.env.PORT || 8080);
+
+// Export
+
+exports.app = app;
+exports.storage = storage;
